@@ -1,0 +1,14 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": { 
+    "scss": "node-sass --include-path src/styles src/styles/app.scss dist/css/main.css",
+    "scss:watch": "nodemon -e scss -x \"yarn scss\""
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.18.3"
+  }
+}
