@@ -16,6 +16,7 @@
     "build:dist": "yarn js:dist && yarn scss:dist && yarn scss:vendor:dist"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
     "node-sass": "^4.9.2",
     "nodemon": "^1.18.3"
   },
