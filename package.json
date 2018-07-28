@@ -3,12 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": { 
-    "scss": "node-sass --include-path src/styles src/styles/app.scss dist/css/main.css",
-    "scss:watch": "nodemon -e scss -x \"yarn scss\""
+  "scripts": {
+    "js": "webpack --mode development",
+    "js:dist": "webpack --mode production",
+    "js:watch": "webpack --mode development --watch ",
+    "scss": "node-sass --source-map-embed src/styles/app.scss dist/css/main.css",
+    "scss:watch": "nodemon -e scss -x \"yarn scss\"",
+    "scss:dist": "node-sass --output-style compressed src/styles/app.scss dist/css/main.scss",
+    "scss:vendor": "node-sass --source-map-embed src/styles/vendor.scss dist/css/vendor.css",
+    "scss:vendor:dist": "node-sass --output-style compressed src/styles/vendor.scss dist/css/vendor.css",
+    "build": "yarn js && yarn scss && yarn scss:vendor",
+    "build:dist": "yarn js:dist && yarn scss:dist && yarn scss:vendor:dist"
   },
   "devDependencies": {
     "node-sass": "^4.9.2",
     "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
