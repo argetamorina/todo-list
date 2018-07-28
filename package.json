@@ -13,12 +13,18 @@
     "scss:vendor": "node-sass --source-map-embed src/styles/vendor.scss dist/css/vendor.css",
     "scss:vendor:dist": "node-sass --output-style compressed src/styles/vendor.scss dist/css/vendor.css",
     "build": "yarn js && yarn scss && yarn scss:vendor",
-    "build:dist": "yarn js:dist && yarn scss:dist && yarn scss:vendor:dist"
+    "build:dist": "yarn js:dist && yarn scss:dist && yarn scss:vendor:dist",
+    "start": "nodemon index.js --exec babel-node"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "node-sass": "^4.9.2",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
     "bluebird": "^3.5.1",

@@ -14,10 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', routes);
 
-app.use(express.static('client'));
+app.use(express.static('dist'));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../../dist', 'index.html'));
 });
 
 Promise = bluebird;
