@@ -4,12 +4,13 @@
   border-radius: .5rem;
   padding: 3rem;
   box-shadow: 1px 1px 15px #efefef;
+  color: $grey;
 
   &__header {
     border-bottom: 1px solid #efefef;
     padding: 2rem 0;
 
-    &__title{
+    &__title {
       color: $blue;
       font-size: 3.5rem;
       font-weight: 600;
@@ -17,7 +18,7 @@
       display: inline-block;
     }
   
-    &__subtitle{
+    &__subtitle {
       color: $grey;
       font-size: 3rem;
       font-weight: 300;
@@ -38,5 +39,93 @@
       }
     }
   }
+
+  &__form {
+    float: right;
+  }
+
+  &__input {
+    font-size: 2rem;
+    font-weight: 300;
+  }
   
+  &__btn {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $white;
+    background: $blue;
+    border: 1px solid $blue;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    margin: 1.5rem 1rem 4rem 1rem;
+
+    &__plus {
+      width: 1.5rem;
+      margin-bottom: 0.4rem;
+      margin-right: 1rem;
+    
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &__svg {
+    width: 1.8rem;
+    margin-right: .5rem;
+    margin-bottom: .3rem;
+
+    path {
+      fill: $grey;
+    }
+  }
+
+  &__link {
+    padding: 1rem 1rem 1rem 0;
+
+    &__svg {
+      width: 1.8rem;
+    }
+  }
+}
+
+
+
+.table {
+
+  &__title {
+    color: $dark-blue;
+  }
+
+  &__row {
+
+    &:hover {
+      background: $light-blue;
+    }
+
+    &__item {
+      padding: 1.75rem !important;
+      color: $grey;
+
+      &.is-completed {
+        color: $blue;
+      
+        .lists__svg {
+          path {
+            fill: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-completed {
+  color: $blue;
+
+  &.lists_svg {
+    path {
+      fill: $blue;
+    }
+  }
 }
