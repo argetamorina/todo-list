@@ -1,0 +1,42 @@
+.lists {
+  margin: 3rem 0;
+  background: $white;
+  border-radius: .5rem;
+  padding: 3rem;
+  box-shadow: 1px 1px 15px #efefef;
+
+  &__header {
+    border-bottom: 1px solid #efefef;
+    padding: 2rem 0;
+
+    &__title{
+      color: $blue;
+      font-size: 3.5rem;
+      font-weight: 600;
+      width: 50%;
+      display: inline-block;
+    }
+  
+    &__subtitle{
+      color: $grey;
+      font-size: 3rem;
+      font-weight: 300;
+      text-align: right;
+      width: 50%;
+      display: inline-block;
+    }
+  
+    &__logout {
+      font-size: 1.4rem;
+      color: $blue;
+      display: block;
+      text-align: right;
+  
+      &:hover {
+        text-decoration: none;
+        color: $dark-blue;
+      }
+    }
+  }
+  
+}

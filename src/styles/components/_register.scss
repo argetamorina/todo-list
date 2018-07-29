@@ -1,0 +1,58 @@
+.register {
+  text-align: center;
+
+  &__title {
+    font-weight: 300;
+    font-size: 4.8rem;
+    color: $grey;
+    padding: 6rem 0 4rem 0;
+  }
+
+  &__input {
+    border: 0;
+    border-bottom: 1px solid $grey;
+    font-size: 2.4rem;
+    font-weight: 300;
+    width: 100%;
+    padding-left: 0.5rem;
+    margin: 1.5rem 0;
+    outline: 0;
+    background: transparent;
+  
+    &::placeholder {
+      color: $grey;
+    }
+  }
+
+  &__btn {
+    margin: 6rem 0 3rem 0;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: $white;
+    background: $blue;
+    border: 2px solid $blue;
+    border-radius: .5rem;
+    padding: 1rem 2rem 1rem 13rem;
+    
+    &__arrow {
+      width: 1.5rem;
+      margin-left: 10rem;
+      margin-bottom: .5rem;
+    
+      path {
+        fill: $white;
+      }
+
+      &:hover {
+        path {
+          fill: $blue;
+        }
+      }
+    }
+
+    &:hover {
+      background: $light-grey;
+      color: $blue;
+    }
+  }
+}

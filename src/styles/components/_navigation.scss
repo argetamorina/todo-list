@@ -1,0 +1,16 @@
+.navigation {
+  text-align: right;
+  padding: 4rem 0;
+
+  &__link {
+    margin: 4rem 5rem;
+    font-size: 2.5rem;
+    color: $blue;
+    transition: color .5s;
+
+    &:hover {
+      text-decoration: none;
+      color: $dark-blue;
+    }
+  }
+}
