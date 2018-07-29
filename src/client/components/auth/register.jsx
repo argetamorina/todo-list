@@ -10,8 +10,6 @@ export default class extends Component {
             <form action="#">
               <input class="register__input" type="text" placeholder="Name" />
 
-              <input class="register__input" type="text" placeholder="Username" />
-
               <input class="register__input" type="text" placeholder="Email" />
 
               <input class="register__input" type="text" placeholder="Password" />
