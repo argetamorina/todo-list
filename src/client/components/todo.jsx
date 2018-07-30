@@ -1,13 +1,41 @@
 import React, { Component } from 'react';
 
-export default class extends Component { 
+export default class extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: props.location.state && props.location.state.authUser ? props.location.state.authUser : props.authUser
+    };
+
+    this.logOut = this.logOut.bind(this);
+  }
+
+  componentWillMount() {
+    // before loading todo, redirect to login if user is not authenticated
+    if (!this.state.authUser) {
+      this.props.history.push('/login');
+    }
+  }
+
+  logOut() {
+    localStorage.removeItem('user');
+    location.reload();
+  }
+
   render () {
+    const { authUser } = this.state;
+
+    if (!authUser) {
+      return null;  
+    }
+
     return (
       <div className="lists">
         <div className="lists__header">
           <h2 className="lists__header__title">To-do List</h2>
-          <h2 className="lists__header__subtitle">Hello, Argeta</h2>
-          <a className="lists__header__logout" href="#">Log Out</a>
+          <h2 className="lists__header__subtitle">Hello, {authUser.name}</h2>
+          <a className="lists__header__logout" href="#" onClick={this.logOut}>Log Out</a>
         </div>
         
         <form className="lists__form" action="">
