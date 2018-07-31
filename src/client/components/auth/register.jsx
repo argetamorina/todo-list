@@ -38,7 +38,7 @@ export default class extends Component {
   onRegister(e) {
     e.preventDefault();
 
-    axios.post('/api/users', {
+    axios.post('/api/auth/register', {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password  

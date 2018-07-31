@@ -2,15 +2,14 @@ import mongoose from 'mongoose';
 
 const schema = new mongoose.Schema({
   user: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
   },
   name: {
     type: String,
     required: true
-  },
-  todos: []
-});
+  }
+}, { timestamps: true });
 
-export default mongoose.model('List', schema);
+export default mongoose.model('Todo', schema);

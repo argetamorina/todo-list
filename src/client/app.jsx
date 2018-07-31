@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import axios from 'axios';
 import Login from './components/auth/login.jsx';
 import Register from './components/auth/register.jsx';
 import Nav from './components/layout/nav.jsx';
@@ -9,6 +10,10 @@ import Todo from './components/todo.jsx';
 class App extends Component {
   render() {
     const authUser = JSON.parse(localStorage.getItem('user'));
+
+    if (authUser) {
+      axios.defaults.headers.common['Authorization'] = `JWT ${authUser.token}`;
+    }
 
     return (
       <Router>
