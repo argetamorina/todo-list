@@ -92,12 +92,31 @@
   }
 }
 
+.clear {
+  clear: both;
+}
 
 
 .table {
+  width: 100%;
+  display: block;
+
+  &__header {
+    background: $light-blue;
+    padding: 1rem 0;
+  }
+
+  &__info {
+    padding: .8rem 0;
+  }
 
   &__title {
     color: $dark-blue;
+    width: 20%;
+    text-align: left;
+    font-size: 1.8rem;
+    display: inline-block;
+    padding-left: .5rem;
   }
 
   &__row {
@@ -109,6 +128,10 @@
     &__item {
       padding: 1.75rem !important;
       color: $grey;
+      width: 20%;
+      display: inline-block;
+      font-size: 1.6rem;
+      vertical-align: top;
 
       &.is-completed {
         color: $blue;
@@ -132,3 +155,42 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .table {
+
+    &__header {
+      display: none;
+    }
+
+    &__row {
+      border-bottom: .2px solid $grey;
+      padding: 1rem 0;
+
+      &__item {
+        padding: 1rem 1.75rem !important;
+
+        &--check {
+          width: 10%;
+        }
+
+        &--todo {
+          width: 90%;
+        }
+
+        &--name {
+          width: 30%;
+        }
+
+        &--time {
+          width: 60%;
+        }
+
+        &--edit {
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+

@@ -7,3 +7,9 @@ body {
   font-family: $font;
   background: #FCFCFC;
 }
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 6px;
+  }
+}
