@@ -6,7 +6,6 @@ class TodosController {
     Todo.findOne({ _id: id })
       .then(list => {
         req.list = list;
-
         return next();
       })
       .catch(err => next(err));
@@ -33,13 +32,14 @@ class TodosController {
     };
 
     Todo.create(data)
-      .then(todo => res.json(todo))
+      .then(todo => {
+        todo.populate('user', () => res.json(todo));
+      })
       .catch(err => next(err));
   }
 
   update(req, res, next) {
-    req.list.name = req.body.name;
-    req.list.todos = req.body.todos;
+    req.list.completed = !Boolean(req.list.completed);
 
     req.list.save()
       .then(list => res.json(list))

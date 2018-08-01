@@ -6,10 +6,11 @@ import Login from './components/auth/login.jsx';
 import Register from './components/auth/register.jsx';
 import Nav from './components/layout/nav.jsx';
 import Todo from './components/todo.jsx';
+import AuthUser from './helpers/auth-user';
 
 class App extends Component {
   render() {
-    const authUser = JSON.parse(localStorage.getItem('user'));
+    const authUser = AuthUser.get();
 
     if (authUser) {
       axios.defaults.headers.common['Authorization'] = `JWT ${authUser.token}`;
@@ -18,14 +19,12 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          {/* show nav only if user is not authenticated */}
-          {!authUser && <Nav />}
+          <Nav />
 
-          <Route exact path="/" render={(props) => <Redirect to={authUser ? '/todo' : '/login'} />}/>
-          <Route exact path="/login" render={(props) => !authUser ? <Login {...props} authUser={authUser} /> : <Redirect to="/todo" />} />
-          <Route exact path="/register" render={(props) => !authUser ? <Register {...props} authUser={authUser} /> : <Redirect to="/todo" />} />
-
-          <Route exact path="/todo" render={(props) => <Todo {...props} authUser={authUser} />} />
+          <Route exact path="/" render={() => <Redirect to={authUser ? '/todo' : '/login'} />}/>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/todo" component={Todo} />
         </div>
       </Router>
     );

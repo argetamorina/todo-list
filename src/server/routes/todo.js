@@ -8,11 +8,11 @@ router.route('/')
   .get(listsController.all)
   .post(listsController.create);
 
-// router.route('/:listId')
-//   .get(listsController.get)
-//   .patch(listsController.update)
-//   .delete(listsController.destroy);
+router.route('/:listId')
+  .get(listsController.get)
+  .put(listsController.update)
+  .delete(listsController.destroy);
 
-// router.param('listId', listsController.load);
+router.param('listId', listsController.load);
 
 export default router;

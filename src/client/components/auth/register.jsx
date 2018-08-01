@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AuthUser from '../../helpers/auth-user';
 
 export default class extends Component {
   constructor(props) {
@@ -15,6 +16,16 @@ export default class extends Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onRegister = this.onRegister.bind(this);
+  }
+
+  componentWillMount() {
+    const authUser = AuthUser.get();
+
+    // before loading register, redirect to todo if user is authenticated
+    if (authUser) {
+      this.props.history.push('/todo');
+      return;
+    }
   }
 
   onNameChange(e) {
