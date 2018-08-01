@@ -1,5 +1,7 @@
 .register {
   text-align: center;
+  width: 33.33%;
+  margin-left: 33.33%;
 
   &__title {
     font-weight: 300;
@@ -54,5 +56,12 @@
       background: transparent;
       color: $blue;
     }
+  }
+}
+
+@media only screen and(max-width: 768px){
+  .register {
+    width: 100%;
+    margin-left: 0;
   }
 }

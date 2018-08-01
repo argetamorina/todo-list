@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import ReactTable from 'react-table'
 import AuthUser from '../helpers/auth-user';
 
 export default class extends Component {

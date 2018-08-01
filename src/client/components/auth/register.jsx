@@ -63,20 +63,16 @@ export default class extends Component {
   render() {
     return (
       <div className="register">
-        <div className="row">
-          <div className="col-md-4 offset-4">
-            <h3 className="register__title">Sign Up</h3>
-            <form onSubmit={this.onRegister}>
-              <input className="register__input" value={this.state.name} onChange={this.onNameChange} type="text" placeholder="Name" />
+        <h3 className="register__title">Sign Up</h3>
+        <form onSubmit={this.onRegister}>
+          <input className="register__input" value={this.state.name} onChange={this.onNameChange} type="text" placeholder="Name" />
 
-              <input className="register__input" value={this.state.email} onChange={this.onEmailChange} type="text" placeholder="Email" />
+          <input className="register__input" value={this.state.email} onChange={this.onEmailChange} type="text" placeholder="Email" />
 
-              <input className="register__input" value={this.state.password} onChange={this.onPasswordChange} type="password" placeholder="Password" />
+          <input className="register__input" value={this.state.password} onChange={this.onPasswordChange} type="password" placeholder="Password" />
 
-              <button className="register__btn">Enter <svg className="register__btn__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129"><path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"/></svg></button>
-            </form>
-          </div>
-        </div>
+          <button className="register__btn">Enter <svg className="register__btn__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129"><path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"/></svg></button>
+        </form>
       </div>
     );
   }
